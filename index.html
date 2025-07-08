@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Project</title>
+    <style>
+        form {
+            width: 550px;
+        }
+       body {
+             background: #2A7B9B;
+             background: linear-gradient(90deg, rgba(42, 123, 155, 1) 11%, rgba(87, 199, 133, 1) 47%, rgba(237, 221, 83, 1) 100%);
+              font-style: normal
+            }
+        fieldset {
+                  border-radius: 25px;
+                  border-color: black;
+
+                 }
+        input:required{
+            border: 2px solid rgb(99, 62, 186);
+        }
+        input:optional{
+            border: 2px dashed  rgb(186, 62, 147);
+        }
+        select{
+            background-color: rgb(188, 234, 219);
+            width: 150px;
+            cursor: pointer;
+            color: black;
+        }
+        input[type="radio"]:checked{ 
+            height: 16px;
+            width: 20px;
+
+        }
+        input[type="radio"]:checked + label{ 
+            color: #4e3593;
+        }
+        
+        input:focus{
+            color: black;
+            background-color: rgb(117, 132, 134);
+        }
+        p {
+            display: none;
+        }
+        input:hover+p{
+            display: inline;
+            background-color: burlywood;
+            
+        }
+        img{
+            display: none;
+        }
+        input[type="Email"]:focus:valid~img.valid
+        {
+          display: inline;
+          height: 15px;
+          width: 15px;
+        }
+         input[type="Email"]:focus:invalid~img.invalid
+        {
+          display: inline;
+          height: 15px;
+          width: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="">
+    <h1 > 
+        <b> Course Registration Form</b>
+    </h1>
+<fieldset>
+    <legend>Personal Details</legend>
+    <table >
+        <tr >
+            <td > 
+                <label for="Name" >Name</label>
+              
+            </td>
+            <td>
+                  <input type="text" placeholder="Ex:Raj" required  ><p>Enter Your Name</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Surname" >Surname</label>
+            </td>
+            <td>
+              <input type="text" placeholder="Ex:K" optional><p>Enter Your SurName</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Mobile Number">Mobile Number</label>
+            </td>
+            <td>
+             <input type="tel" placeholder="Ex:1234556****" required><p>Enter Your MobileNumber</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Email">Email</label>
+            </td>
+            <td>
+                <input type="Email" required  placeholder="Ex:abc@gmail,com"><p>Enter Your Email</p> 
+                <img src="/accept.png"  class="valid"/>
+                <img src="/no.png"  class="invalid" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="password">password</label>
+            </td>
+            <td>
+                <input type="password" placeholder="Ex: minimum 5 characters" maxlength="20" minlength="5" required> <p style="font-size: smaller;" >Atleast&nbsp;provide&nbsp;1Uppercase&nbsp;1lowercase&nbsp;1Specialcharacter</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Confirm password"> Confirm password </label>
+             </td>
+             <td>
+                <input type="password" placeholder="Ex: minimum 5 characters" minlength="5" required><p>Enter Your password</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="DOB">DOB</label>
+            </td>
+            <td>
+                <input type="date"  required><p>Enter Your DOB</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Gender">Gender</label>
+            </td>
+             <td>
+                <input type="radio" name="Gender" value="M"><label for="">male</label>
+                <input type="radio" name="Gender" value="F"><label for="">female</label>
+                <input type="radio" name="Gender" value="O"><label for="">other</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Select country">Select country</label>
+            </td>
+            <td> 
+                <select name="Select country" id="">
+                    <option value="country">INDIA</option>
+                    <option value="country">JAPAN</option>
+                    <option value="country">USA</option>
+                    <option value="country">CHINA</option>
+                    <option value="country">RUSSIA</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <label for="file">Upload image</label>
+            </td>
+            <td> 
+              <input type="file" required>
+            </td>  
+        </tr>
+        <tr>
+            <td>
+                <input type="reset" required >
+            </td>
+        </tr>
+    </table>
+    
+</fieldset>
+<fieldset>
+    <legend>Course Details</legend>
+    <legend>Select course</legend>
+    <select name=" course" id="">
+        <option value="pfs">Python Full Stack </option>
+        <option value="jfs">Java Full Stack </option> 
+    </select><br>
+    <label for="Delivery mode"> delivery mode</label> 
+    <input type="checkbox" name="mode1" value="on">ONLINE
+    <input type="checkbox" name="mode2" value="off">OFFLINE <br>
+    <label for="">Comments</label><br>
+    <textarea name="" id="" cols="30" rows="10"></textarea><br>
+    <input type="submit" required>
+</fieldset>
+</form>
+</body>
+</html>
